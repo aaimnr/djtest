@@ -1,4 +1,6 @@
 from django.http import HttpResponse 
+from django.shortcuts import render_to_response
+
 def hello(request): 
     from urllib import urlopen
     import random, math
@@ -11,4 +13,4 @@ def rss(request):
     import sys 
     import urllib2 
     from xml.dom import minidom
-    return HttpResponse('rss')
+    return render_to_response('template.html', {'rss': r"rss %s" % 3})
